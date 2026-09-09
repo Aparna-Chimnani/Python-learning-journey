@@ -4,6 +4,7 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower
 
 if direction != 'encode' and direction != 'decode':
     print("Invalid input. Please type 'encode' or 'decode'.")
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
 
 text = input("Type your message:\n").lower()
     
