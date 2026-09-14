@@ -19,6 +19,9 @@ operations={
 
 first= float(input("What is the first number?"))
 operator= input("Type the mathematical operator.")
+if operator not in operations:
+        print('invalid operator')
+        
 second= float(input("What is the second number?"))
 
 for key in operations:
@@ -27,27 +30,31 @@ for key in operations:
         print(f'{first} {key} {second} = {result}')
         break
 else:
-        print('inalid operator')
+        print('invalid operator')
 
-question= input("You want to continue with previous result?")
 
 continue_calculation = True
 
 while continue_calculation:
+    question= input("You want to continue with previous result?").lower()
+
     if question == 'yes':
         first= result
         operator= input("Type the mathematical operator.")
+        if operator not in operations:
+            print('invalid operator')
+            continue
         second= float(input("What is the second number?"))
 
         for key in operations:
             if key == operator:
                 result = operations[key](first,second)
                 print(f'{first} {key} {second} = {result}')
-                continue_calculation = False
                 break
 
-        else:
-                print('inalid operator')
+            else:
+                print('invalid operator')
 
-# if question == 'no':
-#     print('Thankyou')
+    else:
+         print('thankyou')
+         continue_calculation=False
